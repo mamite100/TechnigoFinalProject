@@ -40,9 +40,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('User', UserSchema);
 
 
-// Defines the port the app will run on. Defaults to 8080, but can be 
-// overridden when starting the server. For example:
-//
+
 //   PORT=9000 npm start
 const port = process.env.PORT || 8080;
 const app = express();
@@ -77,8 +75,13 @@ const authenticateUser = async (req, res, next) => {
 };
 
 // Routes 
-app.get('/', (req, res) => {
-  res.send('Hello world')
+app.get('/thoughts', authenticateUser);
+app.get('/thoughts', async (req, res) => {
+  const thought = await Thought.find({});
+  res.status(201).json({
+    response: thoughts,
+    success: true
+  });
 });
 
 app.post('/signup', async (req, res) => {
