@@ -4,9 +4,10 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import Main from './components/Main';
-import Login from './components/Login';
-import NotFound from './components/NotFound';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import UserProfile from './pages/UserProfile'
 
 
 export const App = () => {
@@ -14,9 +15,10 @@ export const App = () => {
 
     <BrowserRouter>
     <Routes>
-        <Route path ="/" element = {<Main /> } />
-        <Route path ="/ login" element = {<Login /> } />
-        <Route path ="*" element = {<NotFound /> } />
+        <Route path ="/" element = {<Home/> } />
+        <Route path ="/login" element = {<Login/> }/>
+        <Route path ="/userProfile"  element = {<UserProfile/> }/>
+        <Route path ="*" element = {<NotFound/> } />
     </Routes>
     </BrowserRouter>
   ); 
