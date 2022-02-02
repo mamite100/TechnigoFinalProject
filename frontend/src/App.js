@@ -7,29 +7,31 @@ import {
   Route
 } from 'react-router-dom';
 import Home from './pages/Home';
-import Login from './pages/Login';
+import Signin from './pages/Signin';
 import NotFound from './pages/NotFound';
 import UserProfile from './pages/UserProfile';
 
-import user from './reducers/user';
+import {user} from './reducers/user';
 
 const reducer = combineReducers({
-  user: user.caseReducers
+  user: user.reducer
 });
 const store = configureStore({reducer}); 
   
 export const App = () => {
-  return (
 
+  return (
+    <>
     <BrowserRouter>
     <Provider store ={store}>
     <Routes>
         <Route path ="/" element = {<Home/> } />
-        <Route path ="/login" element = {<Login/> }/>
+        <Route path ="/login" element = {<Signin/> }/>
         <Route path ="/userProfile"  element = {<UserProfile/> }/>
         <Route path ="*" element = {<NotFound/> } />
     </Routes>
     </Provider>
     </BrowserRouter>
+    </>
   ); 
 };
