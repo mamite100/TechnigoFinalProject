@@ -9,12 +9,12 @@ import user from '../reducers/user';
 
 
 
-const MainContainer = styled.container`
+const MainContainer = styled.section`
 display: flex; 
 flex-direction: column;
 width: 100%
 height: 700px;
-//background-image:
+background-image: 
 background-position: center;
 background-repeat: no-repeat; 
 background-size: cover;
@@ -25,7 +25,7 @@ height: 100vh;
 }
 `; 
 
-const MainFormContainer= styled.div`
+const MainFormContainer= styled.section`
 display: flex;
 margin: auto;
 width: 90%;
@@ -39,7 +39,7 @@ width: 90%;
   }
 `;
  
-const FormContainer = styled.div`
+const FormContainer = styled.section`
 display: flex;
 flex-direction: column;
 margin: auto;
@@ -70,9 +70,9 @@ const LabelContainer = styled.div`
 const StyledInput = styled.input`
   height: 35px;
   width: 225px;
-  border: 4px solid black;
+  border: 2px solid black;
   border-radius: 5px;
-  background-color: red;
+  background-color: transparent;
 `;
 
 const SignButton = styled.button`
@@ -85,7 +85,7 @@ const SignButton = styled.button`
   border: none;
 `;
 
-const Buttons = styled.div`
+const Buttons = styled.button`
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -117,8 +117,8 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: 992px) {
-    margin: auto;
+ @media (min-width: 992px) {
+   margin: auto;
   }
 `;
 
@@ -182,7 +182,7 @@ const Signin = () => {
         });
       }
       });
-
+    };
       const handleUsernameChange = (event) => setUsername (event.target.value); 
       const handlePasswordChange = (event) => setPassword(event.target.value); 
       const handleEmailChange = (event) => setEmail(event.target.value);

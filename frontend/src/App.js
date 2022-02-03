@@ -6,16 +6,19 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+
+//import pages
 import Home from './pages/Home';
 import Signin from './pages/Signin';
 import NotFound from './pages/NotFound';
 import UserProfile from './pages/UserProfile';
 
-import {user} from './reducers/user';
+import user from './reducers/user';
 
 const reducer = combineReducers({
-  user: user.reducer
+  user: user.reducer,
 });
+
 const store = configureStore({reducer}); 
   
 export const App = () => {
