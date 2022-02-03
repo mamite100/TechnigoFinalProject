@@ -157,7 +157,7 @@ const Signin = () => {
               email,
               password, 
             }), 
-          }; 
+          } ; 
       fetch(API_URL(mode) , options)
       .then ((res) => res.json())
       .then((data) =>{
@@ -208,10 +208,10 @@ const Signin = () => {
                     onChange={handleUsernameChange}></StyledInput>
             </Label>
             </LabelContainer>
-    <LabelContainer>
-         <Label htmlFor="password">
+        <LabelContainer>
+            <Label htmlFor="password">
             Password
-         <StyledInput
+              <StyledInput
                   id="password"
                   type="text"
                   value={password}

@@ -4,13 +4,14 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto';
 import bcrypt from 'bcrypt';
+import listEndpoints from "express-list-endpoints";
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/finalProject"
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-mongoose.Promise = Promise
+  useUnifiedTopology: true, 
+}); 
+mongoose.Promise = Promise;
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -20,7 +21,6 @@ const UserSchema = new mongoose.Schema({
 
   username: {
     type: String,
-    unique: true,
     require: true,
   },
   email: {
@@ -43,17 +43,17 @@ const User = mongoose.model('User', UserSchema);
 
 //   PORT=9000 npm start
 const port = process.env.PORT || 8080;
-const app = express();
+const app = (express.json();
 
 //Middlewares 
-app.use(cors())
-app.use(express.json())
+app.use(cors()); 
+app.use(express.json()); 
 
 const authenticateUser = async (req, res, next) => {
   const accessToken = req.header('Authorization');
 
   try {
-    const user = await User.findOne({
+    const user = await user.findOne({
       accessToken
     });
     if (user) {
@@ -75,14 +75,10 @@ const authenticateUser = async (req, res, next) => {
 };
 
 // Routes 
-app.get('/thoughts', authenticateUser);
-app.get('/thoughts', async (req, res) => {
-  const thought = await Thought.find({});
-  res.status(201).json({
-    response: thoughts,
-    success: true
-  });
+app.get('/', (req, res) => {
+  res.json(listEndpoints(app));
 });
+
 
 app.post('/signup', async (req, res) => {
   const {

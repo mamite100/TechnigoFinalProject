@@ -1,13 +1,17 @@
 import React from "react";
-import styled from 'styled-components/macro';
-import { useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom"; 
 
-import Button from "../components/Button";
-
+//import Button from "../components/Button";
 
 
 const NotFound = () => {
-    return <h1>The page is not found</h1>
-} ;
+    return (
+        <div>
+            <Link to="/">Go back to home </Link>
+        
+    <h1>Sorry, we can't find the page you're looking ford</h1>
+    </div>
+    );
+};
 
 export default NotFound;

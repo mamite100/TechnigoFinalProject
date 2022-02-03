@@ -5,6 +5,9 @@
     "postinstall": "npm install --prefix backend"
   },
   "dependencies": {
-    "react-use-navigate": "^0.1.1"
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1"
   }
 }
