@@ -1,7 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
+import { API_URL } from "../utils/urls";
 
-const UserProfile = () => {
-    return <h1>Welcome to your profile page</h1>
-} ;
+ const UserProfile = () => {
+    const [] = useState (""); 
 
-export default UserProfile; 
+const accessToken = useSelector((store) => store.user.accessToken);
+  const name = useSelector((store) => store.user.name);
+  const username = useSelector((store) => store.user.username);
+
+
+return(
+
+        <div>
+                <h1>Welcome to your profile page</h1>
+        </div>
+    )
+
+
+};
+     
+export default UserProfile;

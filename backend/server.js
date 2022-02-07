@@ -13,6 +13,8 @@ mongoose.connect(mongoUrl, {
 }); 
 mongoose.Promise = Promise;
 
+//Schemas
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -36,9 +38,8 @@ const UserSchema = new mongoose.Schema({
     default: () => crypto.randomBytes(128).toString('hex'),
   },
 });
-
+// Models 
 const User = mongoose.model('User', UserSchema);
-
 
 
 //   PORT=9000 npm start
@@ -74,19 +75,18 @@ const authenticateUser = async (req, res, next) => {
   }
 };
 
-// Routes 
+// ---------------Routes
+//get 
 app.get('/', (req, res) => {
   res.json(listEndpoints(app));
 });
-
-
+//post
 app.post('/signup', async (req, res) => {
-  const {
-    name,
-    username,
-    password,
-    email
-  } = req.body;
+	    const { 
+      name,
+      username,
+      password,
+      email } = req.body;
 
   try {
     const salt = bcrypt.genSaltSync();
@@ -122,10 +122,10 @@ app.post('/signup', async (req, res) => {
 
 app.post('/signin', async (req, res) => {
   const {
-    name,
-    username,
-    email,
-    password
+      name,
+      username,
+      email,
+      password
   } = req.body;
 
   try {
@@ -158,7 +158,6 @@ app.post('/signin', async (req, res) => {
   }
 
 });
-// route app.get('/userprofile',, async ( req, res) => {}
 
 // Start the server
 app.listen(port, () => {

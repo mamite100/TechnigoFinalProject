@@ -3,9 +3,8 @@ import styled from "styled-components";
 
 const Header = ( ) => {
     return (
-        <HeaderContainer>
+        <HeaderContainer> 
             <p> This is the header</p>
-
         </HeaderContainer>
     );
 };

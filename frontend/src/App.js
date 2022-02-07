@@ -9,11 +9,14 @@ import {
 
 //import pages
 import Home from './pages/Home';
-import Signin from './pages/Signin';
+import Signin from './pages/Login';
+import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import UserProfile from './pages/UserProfile';
 
 import user from './reducers/user';
+import Signup from './pages/SignUp';
+
 
 const reducer = combineReducers({
   user: user.reducer,
@@ -29,12 +32,14 @@ export const App = () => {
     <Provider store ={store}>
     <Routes>
         <Route path ="/" element = {<Home/> } />
-        <Route path ="/login" element = {<Signin/> }/>
-        <Route path ="/userProfile"  element = {<UserProfile/> }/>
+        <Route path ="/login" element = {<Login/> }/>
+        <Route path ="/signup" element = {<Signup/> }/>
+        <Route path ="/userprofile"  element = {<UserProfile/> }/>
         <Route path ="*" element = {<NotFound/> } />
     </Routes>
     </Provider>
     </BrowserRouter>
+    {/*<Footer/>*/}
     </>
   ); 
 };
