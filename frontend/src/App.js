@@ -13,6 +13,7 @@ import Signin from './pages/Login';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import UserProfile from './pages/UserProfile';
+import Navbar from './components/Navbar';
 
 import user from './reducers/user';
 import Signup from './pages/SignUp';

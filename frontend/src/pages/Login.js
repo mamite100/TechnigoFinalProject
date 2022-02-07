@@ -101,7 +101,6 @@ const Login = () => {
           {errorMessage !== null && <p>{error.message}</p>}
         </form>
       </LoginSection>
-      <Link to="/">Home</Link>
     </LoginContainer>
   );
 };

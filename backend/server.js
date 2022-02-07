@@ -43,10 +43,11 @@ const User = mongoose.model('User', UserSchema);
 
 
 //   PORT=9000 npm start
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8000;
 const app = express();
 
-//Middlewares 
+//Middlewares for authenticating 
+
 app.use(cors()); 
 app.use(express.json()); 
 

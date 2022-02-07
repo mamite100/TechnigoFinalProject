@@ -22,7 +22,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (accessToken) {
-      navigate("/profile");
+      navigate("/userprofile");
     }
   }, [accessToken, navigate]);
 
@@ -81,6 +81,7 @@ const Signup = () => {
                     <input
                      id="name"
                      type="text"
+                     placeholder="Name"
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                     />
@@ -88,6 +89,7 @@ const Signup = () => {
                     <input
                     id="username"
                     type="text"
+                    placeholder="Username"
                     value={username}
                     onChange={(event) => setUsername(event.target.value)}
                     />
@@ -95,6 +97,7 @@ const Signup = () => {
                 <input
                     id="password"
                     type="password"
+                    placeholder="Password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                 />
@@ -102,6 +105,7 @@ const Signup = () => {
                 <input
                     id="email"
                     type="email"
+                    placeholder="Email"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                 />

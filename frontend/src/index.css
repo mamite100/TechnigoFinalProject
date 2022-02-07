@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: hsl(240, 0%, 100%);
+  font-family: "Roboto", sans-serif;
   margin: 20px;
 }
 

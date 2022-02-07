@@ -1,26 +1,26 @@
 import React , {useEffect} from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-import {Link} from 'react-dom'; 
+import backgroundImage from '../assets/NorraBryggan.png'; 
+//import {Navbar} from '..components/Navbar';  
+
 
 const Home = () => {
 return(
 
 <BackgroundImage>
-    <Header>
-                <Link to = "/login"> Login</Link>
-    </Header>
 <MainContiner>
 <h1>Welcome</h1>
 <ContentContainer>
 <h3>Signup</h3>
 </ContentContainer>
 <h3>Create your account</h3>
-<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
         <LinkSection>
             <p>
             Already a member?
-            <Link to="/login">Login</Link>
           </p>
+          <Link to="/signup">Login</Link>
         </LinkSection>
     </MainContiner>
 </BackgroundImage>       
@@ -30,7 +30,7 @@ return(
 export default Home; 
 
 const BackgroundImage =styled.main`
-background-image: url ("https://ibb.co/t890tL4");
+background-image:url(${backgroundImage});
 background-repeat: no-repeat;
 background-size: cover;
 background-position: bottom;
@@ -48,12 +48,14 @@ const Header=styled.section`
 margin-bottom: 40px;
 justify-content: center;
 text-align: center;
+
 `;
 
 const MainContiner=styled.div`
 width: 10%;
 height: 80%;
-
+font-size: 30px;
+color: white;  
 `;
 const ContentContainer=styled.div`
 display: flex;
