@@ -6,11 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: hsl(240, 0%, 100%);
-  font-family: "Roboto", sans-serif;
   margin: 20px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
 }

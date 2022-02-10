@@ -1,28 +1,40 @@
-import React , {useEffect} from "react";
-import { Link } from "react-router-dom";
+import React , {useState, useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
+
+
+import { Link } from "react-router-dom";
 import backgroundImage from '../assets/NorraBryggan.png'; 
-//import {Navbar} from '..components/Navbar';  
+
+//import { LoadingIndicator } from '../lib/LoadingIndicator';
+//import { Button } from '../lib/Buttons';
+//import { PageWrapper } from '../lib/PageWrapper';
+//import {ui} from '../reducers/ui'; 
 
 
 const Home = () => {
 return(
 
 <BackgroundImage>
-<MainContiner>
-<h1>Welcome</h1>
-<ContentContainer>
-<h3>Signup</h3>
-</ContentContainer>
-<h3>Create your account</h3>
-<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-        <LinkSection>
-            <p>
-            Already a member?
-          </p>
+    <HomeWrapper>
+    
+      <ContentContainer>
+          <TextContainer>
+            <TextHeader>
+            <h1>Floura /</h1>
+            </TextHeader>
+              <Text>
+                  <h3>Content under construction    </h3>
+                  <p>
+                  Logga in för att ta del dina personiga erbjudanden
+                </p>
+          </Text>
+      </TextContainer>
+          <LinkSection>
           <Link to="/signup">Login</Link>
-        </LinkSection>
-    </MainContiner>
+        </LinkSection>  
+          </ContentContainer>
+    </HomeWrapper>
 </BackgroundImage>       
 ); 
 } ;
@@ -34,7 +46,7 @@ background-image:url(${backgroundImage});
 background-repeat: no-repeat;
 background-size: cover;
 background-position: bottom;
-height: 100%;
+height: 130%;
 width: 100%;
 display: flex;
 position: absolute;
@@ -43,27 +55,48 @@ align-items: center;
 justify-content: center;
 margin: 0 auto;
 `;
-
-const Header=styled.section`
-margin-bottom: 40px;
-justify-content: center;
-text-align: center;
-
+ const TextHeader= styled.h1`
+ text-align: center; 
+ margin: 20px; 
+ font-size: 30px;
+`; 
+const TextContainer= styled.h3`
+font-size: 20px; 
 `;
 
-const MainContiner=styled.div`
-width: 10%;
-height: 80%;
-font-size: 30px;
-color: white;  
+const Text = styled.p`
+text-align: center; 
+font-size: 25px;
+color: white;
 `;
+const HomeWrapper = styled.div`
+  flex-flow: row wrap;
+`; 
+
 const ContentContainer=styled.div`
-display: flex;
-text-align: center;
+width: 80%;
+height: 100%;
+font-size: 30px;
+color:white;
+position: realtive;
+display:flex;
+flex-direction: column; 
 justify-content: center; 
+text-align; center; 
+margin-left: 40px; 
+padding: 10px;
+//justify-content: space-around;
+border: 2px solid white; 
+font-family: 'Roboto Condensed', sans-serif;
+background: linear-gradient(rgba(247,247,247,0.25),rgba(247,247,247, 
+  0.25), rgba(247,247,247, 0.25));
 `;
+
+
+
 const LinkSection=styled.div`
  display: flex;
-  gap: 50px;
+ color: white;
+//gap: 50px;
 `;
 

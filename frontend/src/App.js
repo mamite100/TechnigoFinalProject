@@ -9,14 +9,15 @@ import {
 
 //import pages
 import Home from './pages/Home';
-import Signin from './pages/Login';
-import Login from './pages/Login';
+//import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import UserProfile from './pages/UserProfile';
-import Navbar from './components/Navbar';
+
+//import Navbar from './components/Navbar'; NEED HELP WITH STRUCTURE
 
 import user from './reducers/user';
 import Signup from './pages/SignUp';
+import Info from './pages/Info';
 
 
 const reducer = combineReducers({
@@ -31,11 +32,13 @@ export const App = () => {
     <>
     <BrowserRouter>
     <Provider store ={store}>
+     {/* <Navbar/>*/}
     <Routes>
         <Route path ="/" element = {<Home/> } />
-        <Route path ="/login" element = {<Login/> }/>
+        {/*<Route path ="/login" element = {<Login/> }/>*/}
         <Route path ="/signup" element = {<Signup/> }/>
         <Route path ="/userprofile"  element = {<UserProfile/> }/>
+         <Route path ="/info"  element = {<Info/> }/>
         <Route path ="*" element = {<NotFound/> } />
     </Routes>
     </Provider>

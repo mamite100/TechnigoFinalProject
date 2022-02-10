@@ -2,11 +2,38 @@ import React  from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {BurgerMenue} from '../lib/BurgerMenu'; 
-import styled from "styled-components";
-//import user from "../reducers/user";
+import styled from "styled-components/macro";
+
+
+
+ const Navbar = () => {
+  
+  const name = useSelector((store) => store.user.userData.name);
+
+  return (
+    <Navigation>
+      <StyledLink to="/">
+        <h1>XXX</h1>
+      </StyledLink>
+      <BurgerMenue/>
+      <NavLinks>
+        <StyledLink to="/">
+          <li>XX</li>
+        </StyledLink>
+        <StyledLink to="/">
+          <li>XXX</li>
+        </StyledLink>
+        <StyledLink to="/">
+          <li>{name ? name: "Login"}</li>
+        </StyledLink>
+      </NavLinks>
+    </Navigation>
+  );
+};
+export default Navbar;
 
 const Navigation = styled.nav`
-position: relative;
+  position: relative;
   height: 50px;
   width: 80%;
   margin: auto;
@@ -19,8 +46,9 @@ position: relative;
   margin-bottom: 50px;
   @media (max-width: 768px) {
     align-items: flex-start;
-  }
+  };
 `;
+
 const NavLinks = styled.ul`
   width: 40%;
   display: flex;
@@ -39,7 +67,7 @@ const NavLinks = styled.ul`
     z-index: 20;
     &:hover {
       display: flex;
-    }
+    };
     &::before {
     content: "";
     background: hsla(552,70%,70%,1);
@@ -52,11 +80,11 @@ const NavLinks = styled.ul`
     filter: blur(15px);
     padding: 10px;
     border-radius: 30%;
-  }
-  }
+  };
+  };
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.link`
   position: relative;
   padding: 0px;
   color: black;
@@ -71,36 +99,13 @@ const StyledLink = styled(Link)`
     left: 5%;
     background-color: hsla(552,70%,70%,1);
     transition: 0.5s ease all;
-  }
+  };
   &:hover {
     text-decoration: none;
     &::after {
       width: 90%;
       transition: 0.3s ease all;
-    }
-  }
-`
-export const Navbar =() => {
-    const name = useSelector((store) => store.user.userData.name);
+    };
+  };
+`;
 
-    return(
-<Navigation >
-    <StyledLink to="/userprofile">
-<h1>Go to your profile page</h1>
-    </StyledLink>
-    <BurgerMenue/>
-<NavLinks>
-<StyledLink to="/about">
-          <li>About</li>
-        </StyledLink>
-        <StyledLink to="/items">
-          <li>Search</li>
-        </StyledLink>
-        <StyledLink to="/user">
-          <li>{name ? name : "Login"}</li>
-        </StyledLink>
-</NavLinks>
-</Navigation>
-
-    )
-}

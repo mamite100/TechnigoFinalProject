@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
 import { API_URL } from "../utils/urls";
 import user from "../reducers/user";
+import backgroundImage from '../assets/NorraBryggan.png'; 
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -14,9 +15,7 @@ const Signup = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const accessToken = useSelector((store) => store.user.accessToken);
-  const error = useSelector((store) => store.user.error);
-  console.log(error);
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -48,7 +47,7 @@ const Signup = () => {
             dispatch(user.actions.setUsername(data.response.username));
             dispatch(user.actions.setEmail(data.response.email));
             dispatch(user.actions.setAccessToken(data.response.accessToken));
-            dispatch(user.actions.setError(null));
+            //dispatch(user.actions.setError(null));
           });
         } else {
           batch(() => {
@@ -57,34 +56,27 @@ const Signup = () => {
             dispatch(user.actions.setUsername(null));
             dispatch(user.actions.setEmail(null));
             dispatch(user.actions.setAccessToken(null));
-            dispatch(user.actions.setError(data.response));
-            setErrorMessage(data.message);
+            setErrorMessage(data.response);
           });
         }
       });
   };
 
   return (
+    <BackgroundImage>
         <LoginContainer>
             <LoginSection>
-                 <RadioButtonContainer>
-                        <label htmlFor="signup">Signup</label>
-                         <input
-                            id="signup"
-                            type="radio"
-                            checked={mode === "signup"}
-                            onChange={() => setMode("signup")}
-                         />
-                </RadioButtonContainer>
+              <h3>Login or sign up</h3>
                     <form onSubmit={onFormSubmit}>
-                    <p> Name: </p>
-                    <input
-                     id="name"
-                     type="text"
-                     placeholder="Name"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                    />
+                    {mode === "signup" ?<FormField
+                      name = "Name"
+                      id="name"
+                      type="text"
+                      placeholder="Name"
+                      value={name}
+                      onChange={(event) => setName(event.target.value)}
+                    ></FormField>:null} 
+                    
                     <p> Username: </p>
                     <input
                     id="username"
@@ -109,61 +101,120 @@ const Signup = () => {
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                 />
-
-            <ButtonContainer>
-                 <SubmitButton type="submit">Continue</SubmitButton>
+          <ButtonContainer>
+            <RadioButtonContainer>
+                        <label htmlFor="signup">Signup</label>
+                         <input
+                            id="signup"
+                            type="radio"
+                            checked={mode === "signup"}
+                            onChange={() => setMode("signup")}
+                         />
+                </RadioButtonContainer>
+                <RadioButtonContainer>
+                        <label htmlFor="login">Login</label>
+                         <input
+                            id="login"
+                            type="radio"
+                            checked={mode === "login"}
+                            onChange={() => setMode("login")}
+                         />
+                </RadioButtonContainer>
                  </ButtonContainer>
-                {errorMessage !== null && <p>{error.message}</p>}
+                {errorMessage !== null && <p>{errorMessage}</p>}
              </form>
+                    <SubmitButton type="submit">Continue</SubmitButton>
                  </LoginSection>
-        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
      </LoginContainer>
-
+</BackgroundImage>
   );
 };
 
 export default Signup;
+
+const BackgroundImage =styled.main`
+background-image:url(${backgroundImage});
+background-repeat: no-repeat;
+background-size: cover;
+background-position: bottom;
+height: 130%;
+width: 100%;
+display: flex;
+position: absolute;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+`;
 
 const LoginContainer = styled.div`
   display: flex;
   flex-direction: column; 
   //padding-top: 10px;
   padding-bottom: 20px;
-  align-items: center;
-  background-image: url();  
-  //background-color: red;
+  align-items: center; 
 `;
 
 const LoginSection = styled.div`
   display: flex;
   flex-direction: column;
-  
   align-items: center;
   width: fit-content;
   padding: 90px;
-  margin: 100px;
-  border-radius: 30px;
-  border: 1px solid black;
+  //margin: 100px;
+  //border-radius: 20px;
+  //border: 1px solid black;
   color: white;
+  font-size: 18px;
 `;
 
 const RadioButtonContainer = styled.div`
-  background-color: darkcyan;
-  display: flex;
+  background-color: transparent;
+  border: 1px solid white; 
+  display: inline-block;
+  //justify-content: space-evenly;
   flex-direction: row;
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 10px;
+  align-items: flex-start;
+  margin-top: 50px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 4px;
   color: white;
+  background-color: transparent; 
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
+  flex-direction: row; 
   margin-top: 20px;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px; 
 `;
-
+ 
 const SubmitButton = styled.button`
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
+  justify-content: center; 
+  border: 1px solid white; 
+  background-color: transparent;
+  color: white;
+  font-size: 20px;   
+  background-color: green; 
+  margin-bottom: 20px; 
 `;
+
+const FormField = ({name,id,type, placeholder,value, onChange})=>{
+return(
+  <>
+  <p>{name}:</p>
+  <input 
+  id={id}
+  type={type}
+  placeholder={placeholder}
+  value={value}
+  onChange={onChange}
+  />
+  </>
+);
+}; 
