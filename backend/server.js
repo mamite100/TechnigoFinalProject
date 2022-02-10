@@ -6,7 +6,7 @@ import crypto from 'crypto';
 import bcrypt from 'bcrypt';
 import listEndpoints from "express-list-endpoints";
 
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/finalProject"
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/Luna"
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true, 
