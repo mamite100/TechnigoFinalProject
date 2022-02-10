@@ -1,29 +1,29 @@
 import React  from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {BurgerMenue} from '../lib/BurgerMenu'; 
+import BurgerMenu from '../lib/BurgerMenu'; 
 import styled from "styled-components/macro";
 
 
 
  const Navbar = () => {
   
-  const name = useSelector((store) => store.user.userData.name);
+  const name = useSelector((store) => store.user.username);
 
   return (
     <Navigation>
-      <StyledLink to="/">
-        <h1>XXX</h1>
+      <StyledLink to="/products">
+        <h1>Products</h1>
       </StyledLink>
-      <BurgerMenue/>
+      <BurgerMenu/>
       <NavLinks>
-        <StyledLink to="/">
-          <li>XX</li>
+        <StyledLink to="/info">
+          <li>About</li>
         </StyledLink>
         <StyledLink to="/">
-          <li>XXX</li>
+          <li>Home</li>
         </StyledLink>
-        <StyledLink to="/">
+        <StyledLink to="/signup">
           <li>{name ? name: "Login"}</li>
         </StyledLink>
       </NavLinks>
@@ -40,7 +40,7 @@ const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;  
-  color: black;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 50px;
@@ -50,7 +50,7 @@ const Navigation = styled.nav`
 `;
 
 const NavLinks = styled.ul`
-  width: 40%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,8 +70,8 @@ const NavLinks = styled.ul`
     };
     &::before {
     content: "";
-    background: hsla(552,70%,70%,1);
-    background: white;
+    //background: hsla(552,70%,70%,1);
+    //background: white;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -84,10 +84,10 @@ const NavLinks = styled.ul`
   };
 `;
 
-const StyledLink = styled.link`
+const StyledLink = styled(Link)`
   position: relative;
   padding: 0px;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   &::after {

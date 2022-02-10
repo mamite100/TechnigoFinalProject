@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { API_URL } from "../utils/urls";
 import user from "../reducers/user";
 import backgroundImage from '../assets/NorraBryggan.png'; 
+import Navbar from "../components/Navbar";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -64,18 +65,21 @@ const Signup = () => {
 
   return (
     <BackgroundImage>
+      <Navbar/>
         <LoginContainer>
             <LoginSection>
               <h3>Login or sign up</h3>
                     <form onSubmit={onFormSubmit}>
-                    {mode === "signup" ?<FormField
+                    {mode === "signup" ?
+                    <FormField
                       name = "Name"
                       id="name"
                       type="text"
                       placeholder="Name"
                       value={name}
                       onChange={(event) => setName(event.target.value)}
-                    ></FormField>:null} 
+                    >
+                    </FormField>: ""} 
                     
                     <p> Username: </p>
                     <input
@@ -101,9 +105,11 @@ const Signup = () => {
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                 />
+                 <SubmitButton type="submit">Continue</SubmitButton>
+                 </form>
           <ButtonContainer>
             <RadioButtonContainer>
-                        <label htmlFor="signup">Signup</label>
+                        <label htmlFor="signup">Sign up</label>
                          <input
                             id="signup"
                             type="radio"
@@ -122,10 +128,10 @@ const Signup = () => {
                 </RadioButtonContainer>
                  </ButtonContainer>
                 {errorMessage !== null && <p>{errorMessage}</p>}
-             </form>
-                    <SubmitButton type="submit">Continue</SubmitButton>
+            
+                   
                  </LoginSection>
-        <Link to="/about">About</Link>
+        {/*<Link to="/about">About</Link>*/}
      </LoginContainer>
 </BackgroundImage>
   );

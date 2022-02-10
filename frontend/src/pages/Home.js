@@ -1,35 +1,39 @@
 import React , {useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
-
+import Navbar from '../components/Navbar'; 
 
 import { Link } from "react-router-dom";
 import backgroundImage from '../assets/NorraBryggan.png'; 
 
-//import { LoadingIndicator } from '../lib/LoadingIndicator';
+import { LoadingIndicator } from '../lib/LoadingIndicator';
 //import { Button } from '../lib/Buttons';
-//import { PageWrapper } from '../lib/PageWrapper';
+//import { PageWrapper } from '..lib/PageWrapper';
 //import {ui} from '../reducers/ui'; 
+
+import { BASE_URL } from '../App';
 
 
 const Home = () => {
 return(
 
 <BackgroundImage>
+  
     <HomeWrapper>
-    
+      <Navbar/>
       <ContentContainer>
-          <TextContainer>
             <TextHeader>
-            <h1>Floura /</h1>
+            Mjölet /
             </TextHeader>
+            <TextContainer>
+              Content under construction
+              </TextContainer>
+                  
               <Text>
-                  <h3>Content under construction    </h3>
-                  <p>
+        
                   Logga in för att ta del dina personiga erbjudanden
-                </p>
+            
           </Text>
-      </TextContainer>
           <LinkSection>
           <Link to="/signup">Login</Link>
         </LinkSection>  
@@ -62,6 +66,7 @@ margin: 0 auto;
 `; 
 const TextContainer= styled.h3`
 font-size: 20px; 
+text-align: center; 
 `;
 
 const Text = styled.p`
@@ -69,6 +74,7 @@ text-align: center;
 font-size: 25px;
 color: white;
 `;
+
 const HomeWrapper = styled.div`
   flex-flow: row wrap;
 `; 
@@ -88,15 +94,14 @@ padding: 10px;
 //justify-content: space-around;
 border: 2px solid white; 
 font-family: 'Roboto Condensed', sans-serif;
-background: linear-gradient(rgba(247,247,247,0.25),rgba(247,247,247, 
-  0.25), rgba(247,247,247, 0.25));
+//background: linear-gradient(rgba(247,247,247,0.25),rgba(247,247,247, 
+ // 0.25), rgba(247,247,247, 0.25));
 `;
-
 
 
 const LinkSection=styled.div`
  display: flex;
  color: white;
-//gap: 50px;
+  gap: 50px;
 `;
 

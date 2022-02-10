@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import backgroundImage from '../assets/NorraBryggan.png'; 
-//import {PageWrapper} from '../lib/PageWrapper; '
+//import Navbar from "../components/Navbar";
 
 
 

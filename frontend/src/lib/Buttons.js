@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+const Buttons = styled.button`
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 3px;

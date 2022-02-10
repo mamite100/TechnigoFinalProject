@@ -21,7 +21,7 @@ const Burger = styled.div`
     border-radius: 1px;
     transition: all 0.2s;
   };
-  
+
   &:hover {  
     cursor: pointer;
     div {
@@ -40,7 +40,7 @@ const Burger = styled.div`
 `;
 
 
-export const BurgerMenu = () => {
+const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -53,3 +53,4 @@ export const BurgerMenu = () => {
     </>
   );
 }; 
+export default BurgerMenu; 
