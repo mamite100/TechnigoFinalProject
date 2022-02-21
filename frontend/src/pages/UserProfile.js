@@ -2,15 +2,15 @@ import React from 'react';
 import {useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { API_URL } from "../utils/urls";
-import { useEffect } from 'react';
+//import { API_URL } from "../utils/urls";
+//import { useEffect } from 'react';
 
  const UserProfile = () => {
-    const [] = useState (""); 
+    //const [] = useState (""); 
 
-const accessToken = useSelector((store) => store.user.accessToken);
-  const name = useSelector((store) => store.user.name);
-  const username = useSelector((store) => store.user.username);
+//const accessToken = useSelector((store) => store.user.accessToken);
+  //const name = useSelector((store) => store.user.name);
+  //const username = useSelector((store) => store.user.username);
 
 
 return(

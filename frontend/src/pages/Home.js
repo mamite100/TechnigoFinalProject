@@ -1,16 +1,16 @@
-import React , {useState, useEffect} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+//import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import Navbar from '../components/Navbar'; 
 
 import { Link } from "react-router-dom";
 import backgroundImage from '../assets/NorraBryggan.png'; 
 
-import { LoadingIndicator } from '../lib/LoadingIndicator';
+//mport { LoadingIndicator } from '../lib/LoadingIndicator';
 
 //import {ui} from '../reducers/ui'; 
 
-import { BASE_URL } from '../App';
+//import { BASE_URL } from '../App';
 
 
 const Home = () => {
