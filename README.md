@@ -16,3 +16,7 @@ The codeing process started by setting up most of the backend and then add the f
   - (Trello)
   - Figma
   - Postman
+## Frontend 
+instert netlify url 
+## Backend 
+insert heruku url
