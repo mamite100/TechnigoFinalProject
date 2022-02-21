@@ -68,7 +68,7 @@ const Signup = () => {
       <Navbar/>
         <LoginContainer>
             <LoginSection>
-              <h3>Login or sign up</h3>
+              <h3>Logga in eller signa up</h3>
                     <form onSubmit={onFormSubmit}>
                     {mode === "signup" ?
                     <FormField
@@ -81,7 +81,7 @@ const Signup = () => {
                     >
                     </FormField>: ""} 
                     
-                    <p> Username: </p>
+                    <p> Användarnamn: </p>
                     <input
                     id="username"
                     type="text"
@@ -89,7 +89,7 @@ const Signup = () => {
                     value={username}
                     onChange={(event) => setUsername(event.target.value)}
                     />
-                    <p> Password: </p>
+                    <p> Lösenord: </p>
                 <input
                     id="password"
                     type="password"
@@ -97,7 +97,7 @@ const Signup = () => {
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                 />
-                    <p> Email: </p>
+                    <p> E-mail: </p>
                 <input
                     id="email"
                     type="email"
@@ -106,11 +106,11 @@ const Signup = () => {
                     onChange={(event) => setEmail(event.target.value)}
                 />
               
-                 <SubmitButton type="submit">Continue</SubmitButton>
+                 <SubmitButton type="submit">Fortsätt</SubmitButton>
                  </form>
           <ButtonContainer>
             <RadioButtonContainer>
-                        <label htmlFor="signup">Sign up</label>
+                        <label htmlFor="signup">Signa up</label>
                          <input
                             id="signup"
                             type="radio"
@@ -118,15 +118,15 @@ const Signup = () => {
                             onChange={() => setMode("signup")}
                          />
                 </RadioButtonContainer>
-                <RadioButtonContainer>
-                        <label htmlFor="login">Login</label>
+                          <RadioButtonContainer>
+                        <label htmlFor="login">Logga in</label>
                          <input
                             id="login"
                             type="radio"
                             checked={mode === "login"}
                             onChange={() => setMode("login")}
                          />
-                </RadioButtonContainer>
+                           </RadioButtonContainer>
                  </ButtonContainer>
                 {errorMessage !== null && <p>{errorMessage}</p>}
             

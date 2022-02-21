@@ -5,26 +5,26 @@ import BurgerMenu from '../lib/BurgerMenu';
 import styled from "styled-components/macro";
 
 
-
  const Navbar = () => {
   
   const name = useSelector((store) => store.user.username);
 
   return (
     <Navigation>
+      <NavLinks>
       <StyledLink to="/products">
-        <h1>Products</h1>
+        <h1>Produkterna</h1>
       </StyledLink>
       <BurgerMenu/>
-      <NavLinks>
+        
         <StyledLink to="/info">
-          <li>About</li>
+          <li>Projektet</li>
         </StyledLink>
         <StyledLink to="/">
-          <li>Home</li>
+          <li>Start</li>
         </StyledLink>
         <StyledLink to="/signup">
-          <li>{name ? name: "Login"}</li>
+          <li>{name ? name: "Logga in"}</li>
         </StyledLink>
       </NavLinks>
     </Navigation>
@@ -42,6 +42,7 @@ const Navigation = styled.nav`
   align-items: center;  
   color: white;
   text-transform: uppercase;
+  font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 50px;
   @media (max-width: 768px) {
@@ -50,11 +51,12 @@ const Navigation = styled.nav`
 `;
 
 const NavLinks = styled.ul`
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  color: white;
   @media (max-width: 768px) {
     position: relative;
     display: none;
@@ -70,8 +72,6 @@ const NavLinks = styled.ul`
     };
     &::before {
     content: "";
-    //background: hsla(552,70%,70%,1);
-    //background: white;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -89,7 +89,6 @@ const StyledLink = styled(Link)`
   padding: 0px;
   color: white;
   text-decoration: none;
-  font-weight: bold;
   &::after {
     content: "";
     position: absolute;

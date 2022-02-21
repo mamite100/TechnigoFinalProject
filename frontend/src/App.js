@@ -16,6 +16,7 @@ import Signup from './pages/SignUp';
 import Info from './pages/Info';
 import Products from './pages/Products';
 
+import Navbar from './components/Navbar';
 
 //import reducers
 import user from './reducers/user';
@@ -34,10 +35,10 @@ export const App = () => {
   return (
     <>
     <BrowserRouter>
-    <Provider store ={store}>
-     {/*<Navbar/>*/}
-    <Routes>
-        <Route path ="/" element = {<Home/> } />
+      <Provider store ={store}>
+        <Navbar/>
+            <Routes>
+                <Route path ="/" element = {<Home/> } />
 
        {/* <Route path ="/login" element = {<Login/> }/>*/}
 

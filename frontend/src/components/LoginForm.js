@@ -126,12 +126,13 @@ const LoginWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: green; 
 `; 
 
 const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 20px;
   width: 100%;
 `; 
 

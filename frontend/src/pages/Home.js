@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 
 import { Link } from "react-router-dom";
 import backgroundImage from '../assets/NorraBryggan.png'; 
+import Footer from "../components/Footer";
 
 //mport { LoadingIndicator } from '../lib/LoadingIndicator';
 
@@ -17,26 +18,23 @@ const Home = () => {
 return(
 
 <BackgroundImage>
-  
-    <HomeWrapper>
-      <Navbar/>
-      <ContentContainer>
+   <Navbar/>
+      <HomeWrapper>
+        <ContentContainer>
             <TextHeader>
             Mjölet /
             </TextHeader>
             <TextContainer>
               Mer information kommer!
               </TextContainer>
-                  
-              <Text>
-        
-                  Kom ihåg att logga in om du vill ta del av dina personiga erbjudanden 
-            
-          </Text>
+                <Text>
+                  Kom ihåg att logga in om du vill ta del av erbjudanden
+              </Text>
           <LinkSection>
                   </LinkSection>  
-          </ContentContainer>
-    </HomeWrapper>
+                </ContentContainer>
+           </HomeWrapper>
+      <Footer/>
 </BackgroundImage>       
 ); 
 } ;
@@ -65,6 +63,8 @@ margin: 0 auto;
 const TextContainer= styled.h3`
 font-size: 20px; 
 text-align: center; 
+background-color: red;
+
 `;
 
 const Text = styled.p`
@@ -75,6 +75,7 @@ color: white;
 
 const HomeWrapper = styled.div`
   flex-flow: row wrap;
+  background-color: green;
 `; 
 
 const ContentContainer=styled.div`

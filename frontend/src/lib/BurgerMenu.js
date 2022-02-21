@@ -17,7 +17,7 @@ const Burger = styled.div`
   div {
     width: 100%;
     height: 15%;
-    background-color: black;
+    background-color: white;
     border-radius: 1px;
     transition: all 0.2s;
   };
@@ -44,13 +44,12 @@ const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+   
       <Burger open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
         <div />
       </Burger>
-    </>
   );
 }; 
 export default BurgerMenu; 
