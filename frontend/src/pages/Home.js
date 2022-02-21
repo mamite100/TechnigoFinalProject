@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 import backgroundImage from '../assets/NorraBryggan.png'; 
 
 import { LoadingIndicator } from '../lib/LoadingIndicator';
-//import { Button } from '../lib/Buttons';
-//import { PageWrapper } from '..lib/PageWrapper';
+
 //import {ui} from '../reducers/ui'; 
 
 import { BASE_URL } from '../App';
@@ -26,17 +25,16 @@ return(
             Mjölet /
             </TextHeader>
             <TextContainer>
-              Content under construction
+              Mer information kommer!
               </TextContainer>
                   
               <Text>
         
-                  Logga in för att ta del dina personiga erbjudanden
+                  Kom ihåg att logga in om du vill ta del av dina personiga erbjudanden 
             
           </Text>
           <LinkSection>
-          <Link to="/signup">Login</Link>
-        </LinkSection>  
+                  </LinkSection>  
           </ContentContainer>
     </HomeWrapper>
 </BackgroundImage>       
@@ -100,8 +98,13 @@ font-family: 'Roboto Condensed', sans-serif;
 
 
 const LinkSection=styled.div`
- display: flex;
- color: white;
-  gap: 50px;
+display: flex;
+color: white;
+text-align; center; 
+justify-content: center; 
+`;
+
+const StyledLink = styled(Link)`
+color: white;
 `;
 

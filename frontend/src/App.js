@@ -16,8 +16,6 @@ import Signup from './pages/SignUp';
 import Info from './pages/Info';
 import Products from './pages/Products';
 
-//import components
-//import Navbar from './components/Navbar;'
 
 //import reducers
 import user from './reducers/user';
@@ -44,13 +42,10 @@ export const App = () => {
        {/* <Route path ="/login" element = {<Login/> }/>*/}
 
         <Route path ="/signup" element = {<Signup/> }/>
-        
         <Route path ="/userprofile"  element = {<UserProfile/> }/>
-
          <Route path ="/info"  element = {<Info/> }/>
 
          <Route path ="/products"  element = {<Products/> }/>
-
         <Route path ="*" element = {<NotFound/> } />
     </Routes>
     </Provider>

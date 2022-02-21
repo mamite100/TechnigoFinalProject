@@ -105,6 +105,7 @@ const Signup = () => {
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                 />
+              
                  <SubmitButton type="submit">Continue</SubmitButton>
                  </form>
           <ButtonContainer>
@@ -166,20 +167,20 @@ const LoginSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
+  width: inherit;
   padding: 90px;
-  //margin: 100px;
-  //border-radius: 20px;
-  //border: 1px solid black;
+  margin: 100px;
+  border: 2px solid white;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
 `;
+
 
 const RadioButtonContainer = styled.div`
   background-color: transparent;
   border: 1px solid white; 
   display: inline-block;
-  //justify-content: space-evenly;
+  justify-content: space-evenly;
   flex-direction: row;
   align-items: flex-start;
   margin-top: 50px;
@@ -194,11 +195,14 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row; 
   margin-top: 20px;
-  justify-content: space-evenly;
+  justify-content: center:
   margin-bottom: 20px; 
 `;
  
 const SubmitButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
   padding: 10px;
   border-radius: 4px;
   justify-content: center; 
@@ -206,9 +210,9 @@ const SubmitButton = styled.button`
   background-color: transparent;
   color: white;
   font-size: 20px;   
-  background-color: green; 
-  margin-bottom: 20px; 
+  background-color: transparent; 
 `;
+
 
 const FormField = ({name,id,type, placeholder,value, onChange})=>{
 return(
