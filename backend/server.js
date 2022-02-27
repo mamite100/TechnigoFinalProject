@@ -140,6 +140,7 @@ app.post('/login', async (req, res) => {
           userId: user._id,
           name: user.name,
           username: user.username,
+          email:user.email,
           accessToken: user.accessToken
         },
         success: true
