@@ -4,8 +4,8 @@ import { useNavigate} from "react-router-dom";
 import styled from "styled-components";
 import { API_URL } from "../utils/urls";
 import user from "../reducers/user";
-import backgroundImage from '../assets/NorraBryggan.png'; 
 import Navbar from "../components/Navbar";
+import BurgerMenu from "../lib/BurgerMenu";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -64,11 +64,14 @@ const Signup = () => {
   };
 
   return (
-    <BackgroundImage>
-      <Navbar/>
-        <LoginContainer>
-            <LoginSection>
-              <h3>Logga in eller signa up</h3>
+    
+   <Container>
+        <Wrapper>
+            <BurgerMenu/>
+                  <Navbar/>
+                      <LoginContainer>
+                            <LoginSection>
+                    <h3>Logga in eller signa up</h3>
                     <form onSubmit={onFormSubmit}>
                     {mode === "signup" ?
                     <FormField
@@ -133,26 +136,37 @@ const Signup = () => {
                    
                  </LoginSection>
         {/*<Link to="/about">About</Link>*/}
-     </LoginContainer>
-</BackgroundImage>
+            </LoginContainer>
+      </Wrapper>
+</Container>
   );
 };
 
 export default Signup;
 
-const BackgroundImage =styled.main`
-background-image:url(${backgroundImage});
-background-repeat: no-repeat;
-background-size: cover;
-background-position: bottom;
-height: 130%;
-width: 100%;
+//const BackgroundImage =styled.main`
+//background-image:url(${backgroundImage});
+//background-repeat: no-repeat;
+//background-size: cover;
+//background-position: center;
+//height: 1000px;
+//width: 1000px;
+//display: flex;
+//position: absolute;
+//flex-direction: column;
+//align-items: center;
+//justify-content: center;
+//margin: 0 auto;
+//`;
+const Container= styled.section`
 display: flex;
-position: absolute;
 flex-direction: column;
-align-items: center;
 justify-content: center;
-margin: 0 auto;
+align-items: center;
+min-height: 90vh;
+`;
+
+const Wrapper=styled.section`
 `;
 
 const LoginContainer = styled.div`

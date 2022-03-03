@@ -21,7 +21,7 @@ const FooterContainer = styled.div`
   height: 60px;
   margin-bottom: 30px; 
   background-color: transparent;
-  color: white;
+  color: black;
   align-items: center;
   text-align: center;
   justify-content: center;

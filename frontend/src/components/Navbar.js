@@ -40,11 +40,12 @@ const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;  
-  color: white;
+  color: black;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 50px;
+  
   @media (max-width: 768px) {
     align-items: flex-start;
   };
@@ -56,7 +57,7 @@ const NavLinks = styled.ul`
   justify-content: space-between;
   align-items: center;
   list-style: none;
-  color: white;
+  color: black;
   @media (max-width: 768px) {
     position: relative;
     display: none;

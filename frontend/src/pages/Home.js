@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import backgroundImage from '../assets/NorraBryggan.png'; 
 import Footer from "../components/Footer";
 
-//mport { LoadingIndicator } from '../lib/LoadingIndicator';
+//import { LoadingIndicator } from '../lib/LoadingIndicator';
 
 //import {ui} from '../reducers/ui'; 
 
