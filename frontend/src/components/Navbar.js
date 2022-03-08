@@ -2,6 +2,7 @@ import React  from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import BurgerMenu from '../lib/BurgerMenu'; 
+//import { createGlobalStyle } from "styled-components";
 import styled from "styled-components/macro";
 
 
@@ -11,12 +12,12 @@ import styled from "styled-components/macro";
 
   return (
     <Navigation>
-      <NavLinks>
-      <StyledLink to="/products">
+          <StyledLink to="/products">
         <h1>Produkterna</h1>
-      </StyledLink>
-      <BurgerMenu/>
-        
+          </StyledLink>
+
+             <BurgerMenu/>
+             <NavLinks>
         <StyledLink to="/info">
           <li>Projektet</li>
         </StyledLink>
@@ -52,7 +53,7 @@ const Navigation = styled.nav`
 `;
 
 const NavLinks = styled.ul`
-  width: 100%;
+  width: 120%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,6 +74,8 @@ const NavLinks = styled.ul`
     };
     &::before {
     content: "";
+    background: hsla(552,70%,70%,1);
+    background: white;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -88,8 +91,10 @@ const NavLinks = styled.ul`
 const StyledLink = styled(Link)`
   position: relative;
   padding: 0px;
-  color: white;
+  color: black;
   text-decoration: none;
+  font-weight: bold; 
+
   &::after {
     content: "";
     position: absolute;
@@ -100,6 +105,7 @@ const StyledLink = styled(Link)`
     background-color: hsla(552,70%,70%,1);
     transition: 0.5s ease all;
   };
+
   &:hover {
     text-decoration: none;
     &::after {

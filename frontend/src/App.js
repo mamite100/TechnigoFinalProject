@@ -1,4 +1,5 @@
 import React from 'react';
+import GlobalStyle from './components/GlobalStyles';
 import { Provider } from 'react-redux';
 import { configureStore , combineReducers} from '@reduxjs/toolkit';
 import {
@@ -36,6 +37,7 @@ export const App = () => {
     <>
     <BrowserRouter>
       <Provider store ={store}>
+        <GlobalStyle/>
         <Navbar/>
             <Routes>
                 <Route path ="/" element = {<Home/> } />

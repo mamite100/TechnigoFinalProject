@@ -1,7 +1,6 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-//import backgroundImage from '../assets/arcipelago1.png'; 
 import Navbar from "../components/Navbar";
 import BurgerMenu from "../lib/BurgerMenu";
 import Footer from "../components/Footer";
@@ -11,9 +10,9 @@ import Footer from "../components/Footer";
 const Info = () => {
     return(
 <Container>
-    <Wrapper>
-            <BurgerMenu/>
-                    <Navbar/>
+   <Navbar/>
+      <BurgerMenu/>
+          <Wrapper>
                         <TextHeader> Mjölet/</TextHeader>
     <br></br>
                         <TextContainer>
@@ -26,19 +25,6 @@ const Info = () => {
 }; 
 export default Info;
 
-//const BackgroundImage =styled.main`
-//background-image:url(${backgroundImage});
-//background-repeat: no-repeat;
-//background-size: cover;
-//height: 100%;
-//width: 100%;
-//display: flex;
-//position: absolute;
-//flex-direction: column;
-//align-items: center;
-//justify-content: center;
-//margin: 0 auto;
-//`;
 
 const Container= styled.section`
 display: flex;
